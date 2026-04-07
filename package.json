@@ -1,0 +1,75 @@
+{
+  "name": "@varbyte/signals-core",
+  "version": "1.0.0",
+  "description": "Framework-agnostic reactive signals library with zero dependencies. TypeScript-first with automatic dependency tracking.",
+  "type": "module",
+  "author": "Daniel Vargas",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/varbyte-dev/signals.git"
+  },
+  "bugs": {
+    "url": "https://github.com/varbyte-dev/signals/issues"
+  },
+  "homepage": "https://github.com/varbyte-dev/signals#readme",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "API.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "bench": "vitest bench",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome check src tests",
+    "size": "npm run build && echo '=== Bundle Size ===' && gzip -c dist/index.js | wc -c | awk '{print \"ESM gzipped: \" $1 \" bytes (\" $1/1024 \" KB)\"}'",
+    "prepublishOnly": "npm run typecheck && npm run test && npm run build"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@types/node": "^25.5.2",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "vitest": "^2.1.9"
+  },
+  "keywords": [
+    "signals",
+    "reactive",
+    "state",
+    "computed",
+    "effect",
+    "reactive-programming",
+    "state-management",
+    "typescript",
+    "framework-agnostic",
+    "zero-dependencies",
+    "solid",
+    "preact",
+    "angular",
+    "vue",
+    "react"
+  ],
+  "license": "MIT"
+}

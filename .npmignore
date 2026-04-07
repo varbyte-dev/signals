@@ -1,0 +1,36 @@
+# Source files
+src/
+*.ts
+!*.d.ts
+
+# Tests
+**/__tests__/
+*.test.ts
+*.bench.ts
+vitest.config.ts
+
+# Config files
+tsconfig.json
+tsup.config.ts
+biome.json
+.gitignore
+.npmignore
+
+# Development
+node_modules/
+.vscode/
+.idea/
+*.log
+
+# Documentation (keep README.md and API.md)
+# README.md and API.md are NOT ignored - they'll be included
+
+# Build artifacts (keep only dist/)
+# dist/ is included via "files" field in package.json
+
+# SDD artifacts
+.atl/
+
+# Git
+.git/
+.github/
